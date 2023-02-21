@@ -31,7 +31,7 @@ Obs: Keep the LineRun.exe file in the original directory, and it will works.
 
 - `Python language, for game logics`
 - `Pygame library, for game funcionalities`
-- `P.O.O. concepts, for programming organization
+- `P.O.O. concepts, for programming organization`
 
 # Author
 
