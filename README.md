@@ -28,8 +28,6 @@ This game is designed for Windows. Follow these steps to enjoy the challenge:
 4. `Install the Game`
 5. `Have Fun!`
 
-Note: Keep the LineRun.exe file in the original directory for the game to work correctly.
-
 # Technologies Used
 
 - `Python Language for Game Logic`
