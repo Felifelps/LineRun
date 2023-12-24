@@ -14,6 +14,7 @@ import pygame
 pygame.init()
 
 class app:
+    mixer = True
     def __init__(self):
         self.data_image_path = os.getcwd() + ("\\Source" if "Source" not in os.getcwd() else "") + "\\Data\\Images"
         self.data_sound_path = os.getcwd() + ("\\Source" if "Source" not in os.getcwd() else "") + "\\Data\\Sounds"
@@ -21,12 +22,16 @@ class app:
         self.screen = pygame.display.set_mode(Position.relative_game_screen_size)
         pygame.display.set_icon(pygame.image.load(self.data_image_path + "\\Ico.png"))
         pygame.display.set_caption("LineRun")
-        pygame.mixer.music.load(self.data_sound_path + "\\Cyberpunk Moonlight Sonata.mp3")
+        try:
+            pygame.mixer.music.load(self.data_sound_path + "\\Cyberpunk Moonlight Sonata.mp3")
+        except Exception as e:
+            self.mixer = False
         self.main_menu()
     #---------------------------------------------------------------------------------------------------------------------------------
     def main_menu(self):
         #Music
-        pygame.mixer.music.play(-1)
+        if self.mixer:
+            pygame.mixer.music.play(-1)
 
         #Background and title
         background = pygame.image.load(os.path.join(self.data_image_path + "\\background.png"))
@@ -51,23 +56,23 @@ class app:
 
         #Widgets
         best_score = Label("Melhor pontuação: " + str(self.best_score),
-                      Color.main_purple, 
-                      [Position.relx(275), Position.rely(770)],
-                      "Corbel",
-                      30
-                      )
+                    Color.main_purple, 
+                    [Position.relx(275), Position.rely(770)],
+                    "Corbel",
+                    30
+                    )
         best_score.centerX(Position.relx(300))
 
         play = Button(self.screen, 
-                      os.path.join(self.data_image_path + "\\button_background.png"), 
-                      [Position.relx(88), Position.rely(567), Position.relw(420), Position.relh(200)], 
-                      self.game_screen, 
-                      hover_path=os.path.join(self.data_image_path + "\\button_hover_background.png"),
-                      text="Jogar",
-                      font_family="Impact",
-                      font_size=100,
-                      font_color=Color.ligther_purple
-                      )
+                    os.path.join(self.data_image_path + "\\button_background.png"), 
+                    [Position.relx(88), Position.rely(567), Position.relw(420), Position.relh(200)], 
+                    self.game_screen, 
+                    hover_path=os.path.join(self.data_image_path + "\\button_hover_background.png"),
+                    text="Jogar",
+                    font_family="Impact",
+                    font_size=100,
+                    font_color=Color.ligther_purple
+                    )
 
         #Mainloop
         while running:
@@ -198,9 +203,10 @@ class app:
     #---------------------------------------------------------------------------------------------------------------------------------
     def gameover(self, max_level, time):
         #Music
-        pygame.mixer.music.stop()
-        pygame.mixer.music.load(self.data_sound_path + "\\Alone.mp3")
-        pygame.mixer.music.play(-1)
+        if self.mixer:
+            pygame.mixer.music.stop()
+            pygame.mixer.music.load(self.data_sound_path + "\\Alone.mp3")
+            pygame.mixer.music.play(-1)
 
         #Score
         game_score = Score.calculate_score(max_level, time)
@@ -270,9 +276,10 @@ class app:
             self.best_score = game_score
         
         #Music 
-        pygame.mixer.music.stop()
-        pygame.mixer.music.load(self.data_sound_path + "\\Cyberpunk Moonlight Sonata.mp3")
-        pygame.mixer.music.play(-1)
+        if self.mixer:
+            pygame.mixer.music.stop()
+            pygame.mixer.music.load(self.data_sound_path + "\\Cyberpunk Moonlight Sonata.mp3")
+            pygame.mixer.music.play(-1)
     #---------------------------------------------------------------------------------------------------------------------------------
     def pause(self):
         #Background
@@ -349,8 +356,9 @@ class app:
     #---------------------------------------------------------------------------------------------------------------------------------
     def victory(self, game_score):
         #Music
-        pygame.mixer.music.load(self.data_sound_path + "\\Viktor Kraus - Victory!.mp3")
-        pygame.mixer.music.play(-1)
+        if self.mixer:
+            pygame.mixer.music.load(self.data_sound_path + "\\Viktor Kraus - Victory!.mp3")
+            pygame.mixer.music.play(-1)
 
         #Background
         background = pygame.image.load(os.path.join(self.data_image_path + "\\gameover.png"))
@@ -439,8 +447,9 @@ class app:
             pygame.display.flip()
 
         #Music
-        pygame.mixer.music.stop()
-        pygame.mixer.music.load(self.data_sound_path + "\\Cyberpunk Moonlight Sonata.mp3")
-        pygame.mixer.music.play(-1)
+        if self.mixer:
+            pygame.mixer.music.stop()
+            pygame.mixer.music.load(self.data_sound_path + "\\Cyberpunk Moonlight Sonata.mp3")
+            pygame.mixer.music.play(-1)
 
 
