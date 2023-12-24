@@ -11,27 +11,31 @@
 A simple minigame created by me that is hard to complete. Try to finish level 50 :) 
 <br>
 
-# About the game
+# About the Game
 
-- `Time based arcade`
-- `50 completely random levels`
-- `If you lose, you restart`
-- `A rousing soundtrack`
+- `Time-Based Arcade`
+- `50 Completely Random Levels`
+- `If You Lose, You Restart from Level 1`
+- `A Rousing Soundtrack`
 
-# How I can play?
-It only works at Windows, so, to play, follow the steps:
+# How to Play
 
-- `1°: Download the repository`
-- `2°: Find the directory in your file explorer`
-- `3°: Execute the LineRun.exe file, and have fun ;)`
-<br>
-Obs: Keep the LineRun.exe file in the original directory, and it will works.
+This game is designed for Windows. Follow these steps to enjoy the challenge:
 
-# Technologies used
+1. `Download the Repository`
+2. `Locate the Directory in your File Explorer`
+3. `Run the LineRun -setup.exe File`
+4. `Install the Game`
+5. `Have Fun!`
 
-- `Python language, for game logics`
-- `Pygame library, for game funcionalities`
-- `P.O.O. concepts, for programming organization`
+Note: Keep the LineRun.exe file in the original directory for the game to work correctly.
+
+# Technologies Used
+
+- `Python Language for Game Logic`
+- `Pygame Library for Game Functionalities`
+- `Object-Oriented Programming Concepts for Program Organization`
+- `Autopytoexe and Inno Setup for Windows Availability`
 
 # Author
 
