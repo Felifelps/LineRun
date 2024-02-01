@@ -24,7 +24,7 @@ This game is designed for Windows. Follow these steps to enjoy the challenge:
 
 1. `Download the Repository`
 2. `Locate the Directory in your File Explorer`
-3. `Run the LineRun -setup.exe File`
+3. `Run the LineRun - setup.exe File`
 4. `Install the Game`
 5. `Have Fun!`
 
